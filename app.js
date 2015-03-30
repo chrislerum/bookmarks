@@ -18,6 +18,9 @@ angular.module("Bookmarks", [])
 
   $scope.setCurrentCategory = function(category) {
     $scope.currentCategory = category;
-    console.log("set current category " + category.name);
+  }
+
+  $scope.isCurrentCategory = function(category) {
+    return $scope.currentCategory && $scope.currentCategory.name === category.name
   }
 });

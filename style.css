@@ -15,3 +15,11 @@ div.bookmarks{
   top: 100px;
   background-color: yellow;
 }
+div.logo{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+a.active{
+  font-size: 30px;
+}

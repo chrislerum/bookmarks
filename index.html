@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="style.css"></style>
   </head>
   <body ng-controller="MainController">
+    <div class="logo">
+      <a href="#" ng-click="setCurrentCategory(null)"><img src="logo.png" style="width: 50px;"/></a>
+    </div>
     <div class="categories">
       <ul>
         <li ng-repeat="category in categories">
-        <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
+        <a href="#" ng-click="setCurrentCategory(category)" ng-class="{'active':isCurrentCategory(category)}">{{category.name}}</a>
         </li>
       </ul>
     </div>
