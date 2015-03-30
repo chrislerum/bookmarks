@@ -3,12 +3,22 @@
   <head>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="style.css"></style>
   </head>
   <body ng-controller="MainController">
-    <ul>
-      <li ng-repeat="category in categories">
+    <div class="categories">
+      <ul>
+        <li ng-repeat="category in categories">
         {{category.name}}
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="bookmarks">
+      <ul>
+        <li ng-repeat="bookmark in bookmarks">
+        <a href={{bookmark.url}} target="blank">{{bookmark.name}}</a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
