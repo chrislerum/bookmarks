@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="Bookmarks">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <ul>
+      <li ng-repeat="category in categories">
+        {{category.name}}
+      </li>
+    </ul>
+  </body>
+</html>
