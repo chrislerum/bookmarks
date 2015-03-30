@@ -20,6 +20,17 @@ div.logo{
   top: 50px;
   left: 50px;
 }
+div.logo img{
+  width: 50px;
+}
+div.logo img.active{
+  width: 100px;
+}
 a.active{
   font-size: 30px;
+}
+div.create-form{
+  position: absolute;
+  width: 200px;
+
 }

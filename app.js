@@ -20,6 +20,10 @@ angular.module("Bookmarks", [])
     $scope.currentCategory = category;
   }
 
+  $scope.isCategoryNull = function() {
+    return $scope.currentCategory === null;
+  }
+
   $scope.isCurrentCategory = function(category) {
     return $scope.currentCategory && $scope.currentCategory.name === category.name
   }

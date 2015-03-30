@@ -7,7 +7,7 @@
   </head>
   <body ng-controller="MainController">
     <div class="logo">
-      <a href="#" ng-click="setCurrentCategory(null)"><img src="logo.png" style="width: 50px;"/></a>
+      <a href="#" ng-click="setCurrentCategory(null)"><img ng-class="{'active':isCategoryNull()}" src="logo.png"/></a>
     </div>
     <div class="categories">
       <ul>
@@ -23,6 +23,8 @@
         {{bookmark.category}}
         </li>
       </ul>
+    </div>
+    <div class="forms">
     </div>
   </body>
 </html>
