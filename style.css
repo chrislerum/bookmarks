@@ -1,15 +1,17 @@
 body{
-  background-color: cyan;
+  background-color: white;
 }
 div.categories{
   position: absolute;
   width: 200px;
   left: 100px;
   top: 100px;
+  background-color: cyan;
 }
 div.bookmarks{
   position: absolute;
   width: 200px;
   left: 400px;
   top: 100px;
+  background-color: yellow;
 }
