@@ -17,6 +17,7 @@ angular.module("Bookmarks", [])
   $scope.currentCategory = null;
   $scope.isCreating = false;
   $scope.isEditing = false;
+  $scope.editedBookmark = null;
 
   $scope.setCurrentCategory = function(category) {
     $scope.currentCategory = category;
@@ -35,6 +36,7 @@ angular.module("Bookmarks", [])
   $scope.startCreating = function(){
     $scope.isCreating = true;
     $scope.isEditing = false;
+    resetCreateForm();
   }
 
   $scope.startEditing = function(){
@@ -56,5 +58,25 @@ angular.module("Bookmarks", [])
 
   $scope.shouldShowEditing = function(){
     return $scope.isEditing && !$scope.isCreating;
+  }
+
+  function resetCreateForm(){
+    console.log('resetCreateForm');
+    $scope.newBookmark = {
+      title: '',
+      url: '',
+      category: $scope.currentCategory.name
+    }
+  }
+
+  $scope.createBookmark= function(bookmark) {
+    console.log('createBookmark');
+    bookmark.id = $scope.bookmarks.length;
+    $scope.bookmarks.push(bookmark);
+    resetCreateForm();
+  }
+
+  $scope.setEditedBookmark = function(bookmark){
+    $scope.editedBookmark = bookmark;
   }
 });
