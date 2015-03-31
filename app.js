@@ -15,9 +15,13 @@ angular.module("Bookmarks", [])
   ]
 
   $scope.currentCategory = null;
+  $scope.isCreating = false;
+  $scope.isEditing = false;
 
   $scope.setCurrentCategory = function(category) {
     $scope.currentCategory = category;
+    $scope.cancelCreating();
+    $scope.cancelEditing();
   }
 
   $scope.isCategoryNull = function() {
@@ -28,11 +32,7 @@ angular.module("Bookmarks", [])
     return $scope.currentCategory && $scope.currentCategory.name === category.name
   }
 
-  $scope.isCreating = false;
-  $scope.isEditing = false;
-
   $scope.startCreating = function(){
-    console.log('start creating')
     $scope.isCreating = true;
     $scope.isEditing = false;
   }
