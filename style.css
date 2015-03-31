@@ -3,22 +3,18 @@ body{
 }
 div.categories{
   position: absolute;
-  width: 200px;
   left: 100px;
   top: 100px;
-  background-color: cyan;
 }
 div.bookmarks{
   position: absolute;
-  width: 200px;
   left: 400px;
   top: 100px;
-  background-color: yellow;
 }
 div.logo{
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 10px;
+  left: 10px;
 }
 div.logo img{
   width: 50px;
@@ -31,6 +27,32 @@ a.active{
 }
 div.create-form{
   position: absolute;
-  width: 200px;
-
+  background-color: #efefef;
+  width: 600px;
+  border: 1px solid green;
+  height: 200px;
+  left: 100px;
+  top: 300px;
 }
+div.edit-form{
+  position: absolute;
+  background-color: #eeffaa;
+  width: 600px;
+  border: 1px solid red;
+  height: 200px;
+  left: 100px;
+  top: 300px;
+}
+div.plus{
+  position: absolute;
+  top: 100px;
+  left: 700px;
+  width: 100px;
+  height: 100px;
+}
+div.plus a{
+  color: blue;
+  font-size: 100px;
+  text-decoration: none;
+}
+
