@@ -91,6 +91,11 @@ angular.module("Bookmarks", [])
 
   $scope.isSelectedBookmark = function(bookmarkId) {
     return $scope.editedBookmark && $scope.editedBookmark.id === bookmarkId;
+  }
 
+  $scope.deleteBookmark = function(bookmark) {
+    _.remove($scope.bookmarks, function(b) {
+      return b.id == bookmark.id;
+    })
   }
 });
