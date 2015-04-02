@@ -1,4 +1,7 @@
-angular.module("Bookmarks", [])
+angular.module("Eggly", [
+  'categories',
+  'categories.bookmarks'
+  ])
 .controller("MainController", function($scope) {
   $scope.categories = [
     {id: 0, name: 'Work'},
@@ -50,6 +53,7 @@ angular.module("Bookmarks", [])
 
   $scope.cancelEditing = function(){
     $scope.isEditing = false;
+    $scope.editedBookmark = null;
   }
 
   $scope.shouldShowCreating = function(){
