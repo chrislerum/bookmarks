@@ -6,7 +6,7 @@ angular.module("Eggly", [
 .config(function($stateProvider) {
   $stateProvider
     .state('eggly', {
-      url: '',
+      url: '/',
       templateUrl: '/app/categories/categories.tmpl.html',
       controller: 'MainCtrl'
     })
