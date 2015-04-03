@@ -5,72 +5,19 @@
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body ng-controller="MainCtrl">
-
-  <div class="logo">
-    <a href="#" ng-click="setCurrentCategory(null)"><img ng-class="{'active':isCategoryNull()}" src="logo.png"/></a>
+<div class="container-fluid" ui-view>
   </div>
+    <script type="text/javascript" src="/bower_components/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-  <div class="categories">
-    <ul>
-      <li ng-repeat="category in categories">
-        <a href="#" ng-click="setCurrentCategory(category)" ng-class="{'active':isCurrentCategory(category)}">{{category.name}}</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="bookmarks">
-    <div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
-      <button type='button' ng-click="setEditedBookmark(bookmark);startEditing()" class='btn btn-link'><span class='glyphicon glyphicon-pencil'></span></button>
-      <a ng-class="{'active':isSelectedBookmark(bookmark.id)}" href={{bookmark.url}} target="blank">{{bookmark.title}}</a>
-      <button type='button' ng-click="deleteBookmark(bookmark)" class='btn btn-link'>&times;</button>
-    </div>
-  </div>
-
-  <div class='create-form' ng-if="shouldShowCreating()">
-    <button type="button" class="btn btn-link" ng-click="startCreating();"><span class="glyphicon glyphicon-plus"></span>
-      Create Bookmark
-    </button>
-    <form class="create-form" ng-show="isCreating" role="form" ng-submit="createBookmark(newBookmark)">
-      <div class="form-group">
-        <label for="newBookMarkTitle">Bookmark Title</label>
-        <input type="text" class="form-control" id="newBookmarkTitle" ng-model="newBookmark.title"/>
-      </div>
-      <div class="form-group">
-        <label for="newBookMarkURL">Bookmark URL</label>
-        <input type="text" class="form-control" id="newBookmarkURL" ng-model="newBookmark.url"/>
-      </div>
-      <button type="submit" class="btn btn-info btn-lg">Create</button>
-      <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelCreating()">Cancel</button>
-    </form>
-  </div>
-
-  <div class='edit-form' ng-show="shouldShowEditing()">
-    <h4>Editing {{editedBookmark.title}}</h4>
-    <form class="edit-form" role="form" ng-submit="updateBookmark(editedBookmark)" novalidate>
-      <div class="form-group">
-        <label>Bookmark Title</label>
-        <input type="text" class="form-control" ng-model="editedBookmark.title" placeholder="Title"/>
-      </div>
-      <div class="form-group">
-        <label Bookmark URL></label>
-        <input type="text" class="form-control" ng-model="editedBookmark.url" placeholder="URL"/>
-      </div>
-      <button type="submit" class="btn btn-info btn-lg">Save</button>
-      <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
-    </form>
-  </div>
-
-  <script type="text/javascript" src="/bower_components/lodash/lodash.min.js"></script>
-  <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-  <script type="text/javascript" src="/app/app.js"></script>
-  <script type="text/javascript" src="/app/categories/categories.js"></script>
-  <script type="text/javascript" src="/app/categories/bookmarks/bookmarks.js"></script>
-  <script type="text/javascript" src="/app/categories/bookmarks/create/bookmark-create.js"></script>
-  <script type="text/javascript" src="/app/categories/bookmarks/edit/bookmark-edit.js"></script>
-  <script type="text/javascript" src="/app/common/models/bookmarks-model.js"></script>
-  <script type="text/javascript" src="/app/common/models/categories-model.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/categories/categories.js"></script>
+    <script type="text/javascript" src="/app/categories/bookmarks/bookmarks.js"></script>
+    <script type="text/javascript" src="/app/categories/bookmarks/create/bookmark-create.js"></script>
+    <script type="text/javascript" src="/app/categories/bookmarks/edit/bookmark-edit.js"></script>
+    <script type="text/javascript" src="/app/common/models/bookmarks-model.js"></script>
+    <script type="text/javascript" src="/app/common/models/categories-model.js"></script>
 
 </body>
 </html>

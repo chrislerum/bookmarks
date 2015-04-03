@@ -6,8 +6,8 @@ angular.module("Eggly", [
 .config(function($stateProvider) {
   $stateProvider
     .state('eggly', {
-      url: '/',
-      templateUrl: 'app/categories/categories.tmpl.html',
+      url: '',
+      templateUrl: '/app/categories/categories.tmpl.html',
       controller: 'MainCtrl'
     })
 })
